@@ -1,0 +1,176 @@
+**************************** 2014-2-21 **************************** 
+1. EclipsePHP Studio 3    下载安装
+
+2. EclipsePHP 调试环境的配置
+   下载   ZendDebugger-20110410-cygwin_nt-i386
+   找到对于的php 版本 
+    dummy.php 拷贝到根目录 
+    
+    php.ini 添加
+   [Zend]
+    zend_extension_ts="D:\xampp\php\ext\ZendDebugger.dll"  
+    zend_debugger.allow_hosts=127.0.0.1/32,192.168.1.102/24  
+    zend_debugger.expose_remotely=always 
+    
+
+
+**************************** 2014-2-20 **************************** 
+1. CI 学习
+    1） url辅助函数
+       
+        假如你config文件里面的base_url和index_page是这样定义的：
+
+        config['base_url'] = "http://domain.com/";
+
+        config['index_page'] = "index.php";
+
+        那么你若使用site_url("news/php/2");则实际url为
+
+        http://domain.com/index.php/news/php/2
+
+        若使用base_url("news/php/2");则url为：
+
+        http://domain.com/news/php2 
+                
+
+     
+  
+**************************** 2014-2-14 **************************** 
+1. eclipse 下载PHPEclipse插件
+
+http://www.phpeclipse.net/ 
+
+2. 下载XAMPP1.7.1
+    php 5.2  对应 1.7.1
+  
+参考网页： 
+  http://my.oschina.net/u/1017069/blog/119963
+  
+  
+**************************** 2014-2-11 **************************** 
+1. php 可变函数
+  PHP 支持可变函数的概念。这意味着如果一个变量名后有圆括号，PHP 将寻找与变量的值同名的函数，并且尝试执行它。
+  可变函数可以用来实现包括回调函数，函数表在内的一些用途。
+
+ <?php  
+    function foo()
+    {
+        echo "In foo()<br /> ";
+    }
+    
+    function bar($arg = '')
+    {
+         echo "In bar(); argument was '$arg'.<br /> ";
+    }
+    
+    function echoit($string)
+    {
+        echo $string;
+    }
+    
+    
+    $func = 'foo';
+    $func();  //call foo()
+    
+    $func = 'bar';
+    $func ('test');  // call bar()
+    
+    
+     $func = 'echoit';
+     $func('test1');  // call echoit()
+ ?>
+ 
+ 还可以利用可变函数的特性来调用一个对象的方法
+ <?php
+    class Foo
+    {
+           function func1()
+           {
+           
+              $name = 'Bar';
+              $this->$name(); // This calls the Bar() method
+              
+           }
+            function Bar()
+            {
+                echo 'Bar';
+            }
+           
+    }
+    
+    
+    $foo  = new Foo;
+    $funcname = 'func1';
+    $foo->$funcname();  // call Foo::func1()
+    
+ ?>
+
+2. 构造函数
+   具有构造函数的类会在每次创建对象时先调用此方法，所以非常适合在使用对象之前做一些初始化工作。 
+   
+   function __construct()
+   
+   
+   class BaseClass
+   {
+            function __construct()
+            {
+                 print "In BaseClass constructor ";
+            }
+   }
+   
+   class SubClass  extends BaseClass
+   {
+            function __construct()
+            {
+                parent::__construct();
+                 print "In SubClass constructor ";
+                   
+            }
+   }
+   
+3. 析构函数   
+
+   void __destruct ( void )
+   
+   
+   
+
+
+**************************** 2013-8-25 **************************** 
+1.php 
+
+1)PHP 的脚本块以 <?php 开始，以 ?> 结束
+<?php
+
+?> 
+2) php 的注释
+ PHP 的脚本块以 <?php 开始，以 ?> 结束
+ 
+3）php 的变量
+ 变量定义以 $ 符号开始
+ 
+   [1] 字符串
+      $str = "hello world"
+      
+      并置运算符 (.) 用于把两个字符串值连接起来
+      $str 2 = "hello" . "world" 
+      
+      strlen() 函数
+      strpos() 函数
+      
+       
+       
+   [2]  if else 
+           
+      
+
+**************************** 2013-8-22 **************************** 
+1. 学习php
+  1） 练习用php读取文件
+    $file_handle = fopen("myfile", "r");
+    while (!feof($file_handle)) {
+       $line = fgets($file_handle);
+       echo $line;
+    }
+    fclose($file_handle);

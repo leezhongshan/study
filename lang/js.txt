@@ -1,0 +1,137 @@
+ 第一部分 认识现在javascript 
+编写现代的、分离的代码包括两方面dom 和 javascript 事件
+ 
+
+第一章  现在javascript 程序设计
+
+ 
+
+Javascript 创建新类(或对象)的方法
+
+1） 工厂方式：
+	
+function say(){
+    alert(this.name);
+}
+function people(name,age,sex){
+    var pTemp=new Object;
+    pTemp.name=name;
+    pTemp.age=age;
+    pTemp.sex=sex;
+    pTemp.say=say;
+    return pTemp;
+}
+
+var tom=people("Tom",6,"male");
+var marry=people("Marry",16,"female");
+tom.say();     //outputs "Tom"
+marry.say();  //outputs "Marry"
+
+2） 构造函数式
+
+function Person(name,age,sex){
+    this.name=name;
+    this.age=age;
+    this.sex=sex;
+    this.say=function(){
+       alert(this.name);
+    }
+}
+var tom=new Person("Tom",6,"male");
+var marry=new Person("Marry",16,"female");
+tom.say();     //outputs "Tom"
+marry.say();  //outputs "Marry"
+
+{}  map
+[] list;
+
+
+function Person(params){
+	this.username = params.username;
+	this.username = params.username;
+}
+
+
+3） 原型方式
+使用prototype属性可以很好的扩这类的方法和属性
+
+function Person(){}
+Person.prototype.name="smith";
+Person.prototype.age=3;
+Person.prototype.sex="male";
+Person.prototype.lessons=new Array("mathematics","physics","geography");
+Person.prototype.say=function(){
+     alert(this.name);
+}
+var tom=new Person();
+var marry=new Person();
+tom.lessons.push("biology");
+alert(tom.lessons);     //outputs "mathematics,physics,geography,biology"
+alert(marry.lessons);  //outputs "mathematics,physics,geography,biology"
+
+4） 构造函数/原型混合方式(推荐方式)
+
+function Person(name,age,sex){
+    this.name=name;
+    this.age=age;
+    this.sex=sex;
+    this.lessons=new Array("mathematics","physics","geography");
+}
+
+Person.prototype.say=function(){
+    alert(this.name);
+}
+var tom=new Person("Tom",6,"male");
+var marry=new Person("Marry",16,"female");
+
+tom.lessons.push("biology");
+
+
+alert(tom.lessons);     //outputs "mathematics,physics,geography,biology"
+alert(marry.lessons);  //outputs "mathematics,physics,geography"
+
+ 
+ 5）动态原型方法(推荐方式)
+ 
+ function Person(name,age,sex){
+    this.name=name;
+    this.age=age;
+    this.sex=sex;
+    this.lessons=new Array("mathematics","physics","geography");
+   
+    //以下的Person不可以改成this，原因很简单，自己体会。
+    if(typeof Person._initialized=="undefined"){ 
+           Person.prototype.say=function(){
+                alert(this.name);
+           }
+           Person._initialized=true;
+    }
+}
+var tom=new Person("Tom",6,"male");
+var marry=new Person("Marry",16,"female");
+
+tom.lessons.push("biology");
+
+alert(tom.lessons);     //outputs "mathematics,physics,geography,biology"
+alert(marry.lessons);  //outputs "mathematics,physics,geography
+
+动态原型方法看起来要美观一些，结构上也更像是OOP的类。
+
+6） 混合工厂方式(不推荐使用)
+function Person(){
+   var pTemp=new Object;
+   pTemp.name="smith";
+   pTemp.age=2;
+   pTemp.sex="male";
+   pTemp.say=function(){
+       alert(this.name);
+   }
+   return pTemp;
+}
+var tom=new Person();
+var marry=new Person();
+
+tom.say();  //smith
+marry.say();  //smith
+混合工厂式通常是在不能应用动态原型方式时的变通方法。它的目的是创建构造函数，
+只返回另一种对象的新实例。代码与工厂函数非常相似，区别主要在实例的创建上，工厂方式不需要用new关键字，混合工厂方式使用new关键字来创建实例，这又让它看起来像是构造函数。由于在Person内部调用了new运算符，程序将忽略第二个new运算符(new Person())，而是直接返回pTemp给var的变量。
