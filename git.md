@@ -1,0 +1,56 @@
+1）创建新仓库
+    git init --bare
+  
+2） 检出仓库 
+
+  git clone /path/to/repository
+  git clone username@host:/path/to/repository
+  
+3）工作流
+   工作目录(work)、缓存区（Index）、HEAD
+  [ work  ]--add-->[ index  ]--commit-->[HEAD]    
+4）添加与提交
+   git add <filename>
+   git add *
+   git commit -m "代码提交信息"  #已经提交到了 HEAD，但是还没到你的远端仓库
+
+5)推送改动
+  git push origin master #提交到远端,可以把master 换成你想要推送的任何分支
+  git remote add origin <server>  #没有克隆现有仓库，并欲将你的仓库连接到某个远程服务器
+  
+6)分支
+   1.创建
+     git checkout -b feature_x #创建一个叫做“feature_x”的分支
+   2. 切换回主分支
+      git checkout master
+   3.删除分支
+    git branch -d feature_x   
+     
+   4. 除非你将分支推送到远端仓库，不然该分支就是 不为他人所见的
+     git push origin <branch>
+  
+ 
+7）更新与合并
+    1. 更新你的本地仓库至最新改动
+       git pull  #在你的工作目录中 获取（fetch） 并 合并（merge） 远端的改动      
+       
+    2. 合并其他分支到你的当前分支(master)
+          git merge <branch>
+    3.解决冲突
+        git add <filename>   #标记文件为合并成功
+    4. 合并之前
+      git diff <source_branch> <target_branch>
+8）标签
+    git tag 1.0.0 1b2e1d63ff #1 b2e1d63ff 是你想要标记的提交 ID 的前 10 位字符
+    git log # 获取提交id
+  
+9）替换本地改动
+  git checkout -- <filename>
+  
+  丢弃本地修改与提交
+  git fetch origin
+  git reset --hard origin/master
+  
+10)配置
+	git config --global user.name
+	git config --global user.email "YOUR EMAIL ADDRESS"
