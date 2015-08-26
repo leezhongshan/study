@@ -1,0 +1,15 @@
+首先在.h文件定义 DEBUG_NEW 
+#ifdef _DEBUG 
+#	define  _CRTDBG_MAP_ALLOC
+#	include <crtdbg.h>
+#	define DEBUG_NEW new(_NORMAL_BLOCK, __FILE__, __LINE__)
+#endif
+
+在WinMain或DLL中的导出函数的开始处加上以下代码
+
+#ifdef _DEBUG
+	_CrtSetDbgFlag( _CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+#endif
+
+{,,msvcr100d.dll}_crtBreakAlloc
+{,,msvcr71d.dll}_crtBreakAlloc

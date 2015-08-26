@@ -1,0 +1,42 @@
+研究 qt windows 平台上的开发
+  
+   a. windows 上编译qt源码  
+  
+    1） 下载并安装：
+	      perl工具： ActivePerl-5.10.0.1003-MSWin32-x86-285500
+		             
+ 		  qt 源码：  qt-everywhere-opensource-src-5.0.1  
+		             地址： http://releases.qt-project.org/qt5/5.0.1/single/qt-everywhere-opensource-src-5.0.1.zip
+	
+	2） 打开 vs 2010 命令行提示工具
+	    进入源码目录 qt-everywhere-opensource-src-5.0.1\qtbase
+	  	  
+	    configure -opensource -platform win32-msvc2010 -debug-and-release -opengl desktop 
+	    nmake  
+ 	  
+	 
+  b. 下载并安装 vs2010 上 qt开发插件 
+     Visual Studio Add-in 1.2.0 for Qt5  
+	 下载地址 http://releases.qt-project.org/vsaddin/qt-vs-addin-1.2.0-opensource.exe
+  c. 配置qt插件
+      菜单 qt Options  
+	     qt version 添加 5.0.1  路径设置为：E:\open\qt-everywhere-opensource-src-5.0.1\qtbase
+		 
+  d.vs 2010 解决方案 编译qt 
+      
+     1) 先编译 moc 工具
+	     moc, uic,
+		 
+	 2) 定义环境变量 QTDIR
+          	 E:\open\qt-everywhere-opensource-src-5.0.1\qtbase
+	  		 
+	 3） buildall	 
+          		 
+   
+  e.参考网站：
+    1) Qt简介以及如何配置Qt使用VS2010进行开发  
+       http://www.cnblogs.com/rockhawk/archive/2010/12/15/1906956.html   
+	2) VS2012 编译 Qt5.0.0 正式版
+      http://www.veryhuo.com/a/view/2261.html     
+	3)qt 的下载路径
+	  http://qt-project.org/downloads

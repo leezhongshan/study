@@ -1,0 +1,102 @@
+
+1. NSIS的简介
+	
+	  主要特点：
+	  1） 尺寸小
+	  2） 可扩展，支持所有windows平台
+	  3） 独立的压缩方法
+	  4） 脚本支持
+	  5） 多语言支持
+	  6） 多种特性，及目标系统的检查
+	  7） 定制对话框和界面
+	  8） 插件系统
+	  9） 支持web 安装，文件打包
+	  10） 项目集成，不同的release 和自动builds
+	  11） 简单和人性化的文件格式
+	  
+2. 指南：基础
+	
+				1）简介
+			 NSIS 是一个工具，为开发者创建安装包，	  
+	  
+	      2） 脚本文件
+	     		扩展名为 .nsi
+	     		
+	     		包含命令  !include Sections.nsh
+			  3） 脚本结构
+			 		
+			 	
+			 		--安装属性 （Attributes）
+			 		--页面 （Page）
+			 			Page license
+						Page components
+						Page directory
+						Page instfiles
+						UninstPage uninstConfirm
+						UninstPage instfiles
+									 			
+			 		--区 （Sections）
+			 				区指令功能： 
+			 								（1） 解压文件 （2）读写注册表、ini文件、普通文件 （3）创建目录
+			 								（4）创建快捷方式等等						
+			 								
+			 								
+			 		-- 函数
+			 												
+			 				函数包含脚本代码，有两种类型的函数， 一种用户函数
+			 				一种回调函数
+			 				
+			 		-- 和脚本一起工作
+			 		
+3. 命令行使用
+
+		1） 环境变量
+				NSISDIR, NSISCONFDIR 	Places where nsis data and config files are installed.			 			
+				APPDATA (on Windows) or HOME (on other platforms) - Location of the per-user configuration file
+4. 脚本参考
+
+
+		1） 文件格式
+		2) 变量
+		3） labels
+		4） 调转指令
+		5）页面
+				使用脚本可以控制页面的顺序，外观、行为。 你可以跳过页面、绘制页面等等
+				
+				（1）顺序
+						Page license
+					 Page components
+					 Page directory
+					 Page instfiles
+					 UninstPage uninstConfirm
+					 UninstPage instfiles
+				（2）页面选项
+					License page
+						LicenseText
+						LicenseData
+						LicenseForceSelection
+					
+					Components selection page
+						ComponentText
+					
+					Directory selection page
+						DirText
+						DirVar - can only be used in PageEx
+						DirVerify
+						Un/Installation log page
+						
+						DetailsButtonText
+						CompletedText
+					Uninstall confirmation page
+						
+						DirVar - can only be used in PageEx
+						UninstallText
+						To set the page caption use Caption.
+			(3) 回调
+				
+
+		6) Sections
+			
+		7）静默安装/卸载
+			
+				

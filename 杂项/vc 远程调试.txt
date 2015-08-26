@@ -1,0 +1,14 @@
+
+
+将"C:/Program Files/Microsoft Visual Studio .NET 2003/Common7/Packages/Debugger /msvcmon.exe"
+
+  msvcmon.exe
+  msvcr71.dll
+  NatDbgDM.dll
+  NatDbgTLNet.dll
+    
+	
+	
+ Copy到目标机器(需要远程调试的机器).
+
+然后 以参数  -tcpip -anyuser -timeout -1  运行msvcmon.exe,  即可远程调试

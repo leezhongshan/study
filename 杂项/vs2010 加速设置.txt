@@ -1,0 +1,38 @@
+一、VS2010选项视觉体验设置 
+工具->选项->环境 
+视觉体验的勾选都去掉。不解释，你懂得。（不过还是建议打开硬件加速）
+
+二、禁用Intellisense 
+工具->选项->文本编辑器->C/C++->高级 
+禁用IntelliSense设为True 
+这个功能很好用。相较于Visual Assist X,Intellisence结果更加准确，但活动也更加频繁，项目一庞大时修改头起来就会使VS变得很卡。
+
+三、下载Windows 自动化 API 3.0 更新包 
+微软安装说明： 
+安装 Windows 自动化 API 3.0 后，Visual Studio 2010 的运行速度更快。 
+如果未安装 Windows 自动化 API 3.0，则 Windows 笔和触摸服务会明显降低 Visual Studio IntelliSense 的性能 
+已经禁用IntelliSense的话这个就没什么用了。 
+下载页面：http://support.microsoft.com/kb/971513/zh-cn
+
+四、关闭导航栏(不建议) 
+工具->选项->C#->常规 
+取消勾选导航栏 
+导航栏还是相当好用的，我是不建议去掉他。
+
+五、取消修订 
+工具->选项->常规 
+减少开销,加速IDE的反应
+
+六、取消跟踪活动项 
+工具->选项->项目和解决方案 
+取消 在解决方案资源管理器中跟踪活动项
+
+七、取消重构 
+工具->选项->项目和解决方案 
+EnableRefactoringOnRename设为False
+
+八、禁用IntelliTrace 
+IntelliTrace是VS2010的新特征 
+默认启用并仅收集IntelliTrace事件。 
+目前还不太了解这个功能，但看其介绍是相当有利于开发的，不过同时，资源的消耗也是必然的。 
+禁用方法，工具->选项->IntelliTrace

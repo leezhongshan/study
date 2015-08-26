@@ -1,0 +1,17 @@
+ 
+常见问题:
+  1） ado 未注册
+	在C:/Program Files/Common Files/System/ado下找到msado15.dll 
+        regsvr32   msado15.dll
+
+  2）服务器账号名， 密码是否正确
+  
+  3） sql server 1433 端口是否打开
+	
+	netstat -na
+	
+   如果未打开，打开sql server 配置管理， sql 网络配置 -》mssqlserver 的协议Ip4  地址    已启用 选  "是”
+   然后重新启动服务
+  4) 收不到数据 
+     配置防火墙入站规则
+       udp 6998

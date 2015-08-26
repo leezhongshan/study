@@ -1,0 +1,38 @@
+unlockerr命令行用法：
+
+//单个文件清理
+unlocker c:\windows\system32\drivers\360selfprotection.sys /s /d
+
+//文件列表清理
+unlocker c:\list.txt /s /d /l
+
+list.txt
+c:\windows\system32\drivers\360antiarp.sys
+c:\windows\system32\drivers\360netmon.sys
+c:\windows\system32\drivers\360selfprotection.sys
+c:\windows\system32\drivers\bapidrv.sys
+c:\windows\system32\drivers\efimon.sys
+c:\windows\system32\drivers\hookport.sys
+c:\windows\system32\drivers\protodrv.sys
+c:\windows\system32\drivers\qutmdrv.sys
+c:\windows\system32\drivers\qutmipc.sys unlocker -h
+Unlocker 1.9.0
+---------------------------
+Command line usage:
+
+Unlocker.exe Object [Option]
+
+Object:
+
+Complete path including drive to a file or folder
+
+Options:
+
+/H or -H or /? or -?: Display command line usage
+/S or -S: Unlock object without showing the GUI
+/L or -L: Object is a text file containing the list of files to unlock
+/LU or -LU: Similar to /L with a unicode list of files to unlock
+/O or -O: Outputs Unlocker-Log.txt log file in Unlocker directory
+/D or -D: Delete file
+/R Object2 or -R Object2: Rename file, if /L or /LU is set object2 points to a text file containing the new name of files
+/M Object2 or -M Object2: Move file, if /L or /LU is set object2 points a text file containing the new location of files
