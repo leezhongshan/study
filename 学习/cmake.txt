@@ -1,0 +1,42 @@
+**************************** 2015-5-6 ****************************
+ 1) 编写CMakeLists.txt,main.c  文件
+     
+	     
+		 //main.c
+		#include <stdio.h>
+		#include "mymath.h"
+		int main()
+		{
+				int a = 0;
+				int b = 1;
+
+				printf("the max of a and b is %d\n",max(a,b));
+				return 0;
+		}
+	   
+	    
+	    // CMakeLists.txt
+        PROJECT (HELLO)
+		SET(SRC_LIST main.c mymath.c)
+		MESSAGE(STATUS "This is BINARY dir " ${HELLO_BINARY_DIR})
+		MESSAGE(STATUS "This is SOURCE dir "${HELLO_SOURCE_DIR})
+		ADD_EXECUTABLE(hello ${SRC_LIST})
+		
+   2)编译 cmake .
+   
+   3) 语法
+       
+     SET(SRC_LIST main.c)也可以写成 SET(SRC_LIST “main.c”)
+	是没有区别的，但是假设一个源文件的文件名是 fu nc.c(文件名中间包含了空格)。
+	这时候就必须使用双引号，如果写成了 SET(SRC_LIST fu nc.c)，就会出现错误，提示
+	你找不到 fu 文件和 nc.c 文件。这种情况，就必须写成:
+	SET(SRC_LIST “fu nc.c”)
+	此外，你可以可以忽略掉 source 列表中的源文件后缀，比如可以写成
+	ADD_EXECUTABLE(t1 main)，cmake 会自动的在本目录查找 main.c 或者 main.cpp
+	等，当然，最好不要偷这个懒，以免这个目录确实存在一个 main.c 一个 main.
+	同时参数也可以使用分号来进行分割。
+	下面的例子也是合法的：
+	ADD_EXECUTABLE(t1 main.c t1.c)可以写成 ADD_EXECUTABLE(t1
+	main.c;t1.c).
+  4) 清理工程
+    make clean

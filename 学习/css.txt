@@ -1,0 +1,83 @@
+**************************** 2014-7-3****************************
+1. 颜色与背景
+    color
+    background-color
+    background-image
+    background-repeat
+    background-attachment
+    background-position
+    background
+           [background-color] | [background-image] | [background-repeat] | [background-attachment] | [background-position]
+
+2. 字体
+
+font-style | font-variant | font-weight | font-size | font-family
+
+3. 文本
+  text-indent
+  text-align
+  text-decoration
+  letter-spacing
+  text-transform
+  
+4. 超链
+
+5.元素的分类与标识
+
+6. 组织元素（span和div）
+
+
+**************************** 2014-7-2****************************
+1. css 的基本模型
+selector { property:value;}
+
+3. html 应用 css 有3种方法
+     1）行内样式表
+        style 属性
+     2）内部样式表
+         HTML元素style元素
+            
+         eg.
+          <style type="text/css">
+            body {background-color: #FF0000;}
+           </style>
+     3) 外部样式表
+         <link rel="stylesheet" type="text/css" href="style/style.css" />
+         
+         
+         
+  
+**************************** 2014-6-27****************************
+1. z-index 属性
+  说明
+  该属性设置一个定位元素沿 z 轴的位置，z 轴定义为垂直延伸到显示区的轴。如果为正数，则离用户更近，为负数则表示离用户更远。
+    
+  注释：Z-index 仅能在定位元素上奏效（例如 position:absolute;）！
+
+2. position 属性
+    1)absolute 	
+        生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。
+        元素的位置通过 "left", "top", "right" 以及 "bottom" 属性进行规定。
+    2)fixed 
+        生成绝对定位的元素，相对于浏览器窗口进行定位。
+        元素的位置通过 "left", "top", "right" 以及 "bottom" 属性进行规定。
+    3)relative 	
+        生成相对定位的元素，相对于其正常位置进行定位。
+        因此，"left:20" 会向元素的 LEFT 位置添加 20 像素。
+    4) static 
+    	默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。
+    5)inherit 	
+        规定应该从父元素继承 position 属性的值。
+3.         
+        
+        
+**************************** 2014-2-13****************************
+1. 列表类型
+
+  ul {list-style-type : square}
+  ul li {list-style-image : url(xxx.gif)}
+  
+
+   1）在无序列表中的不同类型的列表标记
+   
+    

@@ -1,0 +1,154 @@
+**************************** 2015-8-12****************************
+pgrep
+-l 同时显示进程名和PID
+
+-o 当匹配多个进程时，显示进程号最小的那个
+
+-n 当匹配多个进程时，显示进程号最大的那个
+
+**************************** 2015-5-7 ****************************
+1. 切换default shell
+sudo dpkg-reconfigure dash  
+选择no即可.
+
+
+2. 
+
+
+**************************** 2015-4-11 ****************************
+1. Debian下配置APACHE2+MYSQL5+PHP5 
+
+http://blog.sina.com.cn/s/blog_4c2991790100h7dp.html
+
+1. apt-get install apache2 mysql-server mysql-client php5 libapache2-mod-php5 php5-gd php5-cli  php5-mysql
+
+ 
+	2.1配置PHP
+	  vi /etc/php5/apache2/php.ini
+			 找到 ;default_charset = "iso-8859-1"
+			 把它改成 default_charset="gb2312"
+
+	2.2配置apache
+	2.2.1 #vi /etc/apache2/mods-enabled/php5.conf
+		   去掉#AddType application/x-httpd-php .php 前的"#"号（我安装的版本默认已去掉）
+	2.2.2 #vi /etc/apache2/mods-available/dir.conf
+		   在DirectoryIndex中加入index.php
+	2.2.3 #vi /etc/apache2/conf.d/charset
+		   改成AddDefaultCharset gb2312
+
+	3.重启
+	  #/etc/init.d/apache2 restart
+
+	4.测试
+	4.1在/var/www/目录下新建show.php文件，在其中输入<?PHP phpinfo();?>
+	4.2在浏览器地址栏输入http://127.0.0.1/show.php,如果可以看到PHP的信息，则说明安装配置成功。
+	5.修改Mysql 的密码，用下面的命令：
+	mysqladmin -u root password 'your-password'
+
+	6.测试Mysql
+	mysql -u root -p
+	输入刚才的密码，如果可以看到mysql提示符，就说明Mysql也弄好了。 
+
+	
+3.熟悉ejabberd、OpenFire、Tigase等开源服务器，以及Smack、Spark和Jitis等开源技术；
+
+深入理解XMPP、jingle、SIP、SIMPLE通讯协议;
+
+4. appche2   
+  www 路径 
+    /var/www
+
+**************************** 2015-4-10 ****************************
+1. 安装ftp 服务器 vsftpd
+
+		1.配置文件路径：/etc/vsftpd.conf
+		2、配置用户可以写权限：write_enable=YES
+		3、配置uMask：local_umask=022（默认为077，该种方式不支持断点续传，修改为022）
+		4、禁止匿名用户登录：anonymous_enable=NO
+		5、限制用户访问配置以外的路径：chroot_local_user=YES（这个配置是限制全部用户的，也可以限制部分用户）
+		6、配置用户的Home目录：local_root=/application/search/test
+		  
+
+2. 命令介绍
+which  查看可执行文件的位置。
+whereis 查看文件的位置。 
+
+
+**************************** 2015-4-9 ****************************
+
+bt  
+
+安装 transmission
+ 
+ 
+ http://www.robertsetiadi.net/installing-transmission-in-raspberry-pi/
+ 
+ 
+ 
+ sudo apt-get install transmission-daemon
+ 
+ mkdir -p /home/pi/usb/incomplete # for incomplete downloads
+mkdir /home/pi/usb/complete # finished downloads
+
+
+修改配置文件 /etc/transmission-daemon/settings.json，修改如下部分
+ 
+	
+"download-dir": "/home/pi/complete",
+"incomplete-dir": "/home/pi/incomplete",
+"rpc-enabled": true,
+"rpc-username": "username",
+"rpc-password": "password",
+"rpc-port": 9091,
+
+配置好之后重启 transmission
+ 
+sudo service transmission-daemon reload
+sudo service transmission-daemon restart
+
+
+
+
+
+
+在浏览器中访问 IP 加 9091端口：比如： http://192.168.1.3:9091/ 。访问时输入上面配置的用户名username和密码password
+
+
+
+3.bt 
+
+
+
+
+**************************** 2015-4-4 ****************************
+1.linux 卸载
+apt-get remove xxxx
+2. 远程桌面
+server install:
+apt-get install xorg lxde-core tightvncserver
+
+
+vncpasswd 密码修改
+
+vnc的服务器端，安装过程中会提示是否安装，按小写的y后回车，继续安装。
+安装完成后会让你设置一个VNC登陆的密码，输入密码后还会问你是否输入个只能观看不能操作的密码，
+一般选择n，也就是不设置
+
+
+ xstartup系统文件
+
+    vi~/.vnc/xstartup
+
+然后在文件的最后添加下面的脚本代码
+
+    lxterminal &
+    /usr/bin/lxsession -s LXDE &
+
+vncserver -geometry 1024x768
+
+refer:
+http://www.laozuo.org/2932.html
+
+client ：
+ vncviewer 
+   

@@ -1,0 +1,39 @@
+**************************** 2014-7-22****************************
+1. redis py
+
+   3种连接方式
+     1） StrictRedis
+       StrictRedis用于实现大部分官方的命令，并使用官方的语法和命令
+     2） ConnectionPool
+     
+     r = redis.Redis(connection_pool=pool)  
+     3）redis pipeline
+     pool = redis.ConnectionPool(host='127.0.0.1', port=9212)  
+     r = redis.Redis(connection_pool=pool)  
+     pipe = r.pipeline() 
+     pipe.set('one', 'first')  
+    pipe.set('two', 'second')  
+    pipe.execute()  
+
+**************************** 2014-7-12****************************
+1. redis 在windows 下的安装和使用
+   
+2. redis linux 
+
+  tar xvzf
+  make CFLAGS="-march=i686"   
+  
+  
+  
+  // 查看防火墙
+  iptables -L -n
+  
+  //打开端口号
+  
+  /sbin/iptables -I INPUT -p tcp --dport 6379 -j ACCEPT
+  
+  
+  /etc/init.d/iptables status 
+  
+  查看防火墙 ， iptables -L -n
+  

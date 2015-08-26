@@ -1,0 +1,12 @@
+**************************** 2015-6-4 ****************************
+
+1. Qt控件中的属性sizePolicy说明  
+   参考 http://blog.163.com/ojb_123/blog/static/24177424201292805426965/
+   
+	1  . Fixed: 大小不能改变
+	2. Minimum: 已经是最小, 不能再被缩小, 但能放大.
+	3. Maximum: 已经是最大, 不能再被放大, 但能缩小.
+	4. Preferred:  控件的sizeHint()是他的sizeHint, 能被缩小, 放大.
+	5. Expanding: 控件可以自行增大或者缩小.
+
+	Preferred与Expanding同时存在时，Expanding会变化，Preferred使用sizeHint()不变化

@@ -1,0 +1,33 @@
+ 学习Scrapy   
+ 
+   1） 新建工程
+	 scrapy startproject tutorial
+   2） 	定义Item
+		from scrapy.item import Item, Field 
+		class DmozItem(Item):
+			title = Field()
+			link = Field()
+			desc = Field()
+   3）	Spider是用户编写的类，用于从一个域（或域组）中抓取信息
+
+		from scrapy.spider import BaseSpider
+
+		class DmozSpider(BaseSpider):
+			name = "dmoz"　# 爬虫的识别名，它必须是唯一的，在不同的爬虫中你必须定义不同的名字
+			allowed_domains = ["dmoz.org"] #
+			start_urls = [        # start_urls：爬虫开始爬的一个URL列表
+				"http://www.dmoz.org/Computers/Programming/Languages/Python/Books/",
+				"http://www.dmoz.org/Computers/Programming/Languages/Python/Resources/"
+			]
+			def parse(self, response):  # 爬虫的方法，调用时候传入从每一个URL传回的Response对象作为参数，response将会是parse方法的唯一的一个参数,
+				filename = response.url.split("/")[-2]
+				open(filename, 'wb').write(response.body)
+				
+   4） crawl dmoz 命令从dmoz.org域启动爬虫
+
+    scrapy crawl dmoz   
+	
+   5) 提取Item
+     scrapy shell http://www.dmoz.org/Computers/Programming/Languages/Python/Books/ 
+		
+   6) 
