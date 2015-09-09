@@ -1,0 +1,46 @@
+**************************** 2015-9-9***************************
+1. 
+glPushMatrix();
+glPopMatrix();
+他们是成对存在的，push进行变换矩阵的压栈，然后在此后（pop之前）进行的一系列的平移、缩放和旋转等都不会对其它的对象照成影响
+
+glPushAttrib(GL_ALL_ATTRIB_BITS);
+glPopAttrib();
+可以对绘制的颜色等属性进行压栈，也就是如果需要着色的话，就在glColor()和obj.render()外包裹他们，这样就不会对其它的渲染物体产生影响 
+
+2. glMatrixMode
+   
+ 3种模式: GL_PROJECTION 投影, GL_MODELVIEW 模型视图, GL_TEXTURE 纹理
+
+http://blog.csdn.net/jiangdf/article/details/8460012
+
+3. 
+
+
+
+**************************** 2015-9-8***************************
+1. glut 函数说明 
+
+  1） glutInit  
+   GLUT 进行初始化，
+  2）glutInitDisplayMode
+      https://www.opengl.org/resources/libraries/glut/spec3/node12.html
+   
+  3）glutReshapeFunc
+     窗口大小发生变化是通知
+     
+  4）glutPostRedisplay(void)
+     glutPostRedisplay 标记当前窗口需要重新绘制。
+  
+  
+2. 设置视见区和修剪空间
+    
+    
+3. 双缓存技术
+  好处： 1） 在缓存画，置换到屏幕
+         2） 制作动画
+      
+      glutSwapBuffers()
+      
+4. 3d 效果
+        
