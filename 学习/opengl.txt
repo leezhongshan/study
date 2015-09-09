@@ -14,10 +14,33 @@ glPopAttrib();
 
 http://blog.csdn.net/jiangdf/article/details/8460012
 
-3. 
+3. OpenGL中的glLoadIdentity、glTranslatef、glRotatef原理 
+  http://blog.csdn.net/loop_k/article/details/5746634
 
 
+4. 帧缓存与OpenGL的帧缓存操作 glClearColor,glClear,glClearDepth 
 
+
+5. Opengles之glRotatef()函数理解 
+public void glRotatef(float angle,float x,float y,float z) 
+angle: 旋转角度 
+(x,y,z):轴向量 
+
+即以向量(x,y,z)为轴旋转angle个角度，那么旋转方向如何判定呢？ 
+
+从 坐标（0，0，0）即原点，引出一条线到（X,Y,Z）,用右手握住这条线，右手大拇指指向 （0，0，0）至（X,Y,Z）的方向 才握。另外四个手指的弯曲指向 即是物体旋转方向。
+  
+
+5.openGL中创建OpenGL Render Context的步骤 
+ 
+  
+  
+6. Free Form Deformation(3dmax ffd)
+ 自由变形
+  
+  
+7. 3dmax 帮助 
+ http://docs.autodesk.com/3DSMAX/15/ENU/3ds-Max-Help/index.html  
 **************************** 2015-9-8***************************
 1. glut 函数说明 
 
