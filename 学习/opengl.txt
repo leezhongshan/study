@@ -1,0 +1,69 @@
+**************************** 2015-9-9***************************
+1. 
+glPushMatrix();
+glPopMatrix();
+他们是成对存在的，push进行变换矩阵的压栈，然后在此后（pop之前）进行的一系列的平移、缩放和旋转等都不会对其它的对象照成影响
+
+glPushAttrib(GL_ALL_ATTRIB_BITS);
+glPopAttrib();
+可以对绘制的颜色等属性进行压栈，也就是如果需要着色的话，就在glColor()和obj.render()外包裹他们，这样就不会对其它的渲染物体产生影响 
+
+2. glMatrixMode
+   
+ 3种模式: GL_PROJECTION 投影, GL_MODELVIEW 模型视图, GL_TEXTURE 纹理
+
+http://blog.csdn.net/jiangdf/article/details/8460012
+
+3. OpenGL中的glLoadIdentity、glTranslatef、glRotatef原理 
+  http://blog.csdn.net/loop_k/article/details/5746634
+
+
+4. 帧缓存与OpenGL的帧缓存操作 glClearColor,glClear,glClearDepth 
+
+
+5. Opengles之glRotatef()函数理解 
+public void glRotatef(float angle,float x,float y,float z) 
+angle: 旋转角度 
+(x,y,z):轴向量 
+
+即以向量(x,y,z)为轴旋转angle个角度，那么旋转方向如何判定呢？ 
+
+从 坐标（0，0，0）即原点，引出一条线到（X,Y,Z）,用右手握住这条线，右手大拇指指向 （0，0，0）至（X,Y,Z）的方向 才握。另外四个手指的弯曲指向 即是物体旋转方向。
+  
+
+5.openGL中创建OpenGL Render Context的步骤 
+ 
+  
+  
+6. Free Form Deformation(3dmax ffd)
+ 自由变形
+  
+  
+7. 3dmax 帮助 
+ http://docs.autodesk.com/3DSMAX/15/ENU/3ds-Max-Help/index.html  
+**************************** 2015-9-8***************************
+1. glut 函数说明 
+
+  1） glutInit  
+   GLUT 进行初始化，
+  2）glutInitDisplayMode
+      https://www.opengl.org/resources/libraries/glut/spec3/node12.html
+   
+  3）glutReshapeFunc
+     窗口大小发生变化是通知
+     
+  4）glutPostRedisplay(void)
+     glutPostRedisplay 标记当前窗口需要重新绘制。
+  
+  
+2. 设置视见区和修剪空间
+    
+    
+3. 双缓存技术
+  好处： 1） 在缓存画，置换到屏幕
+         2） 制作动画
+      
+      glutSwapBuffers()
+      
+4. 3d 效果
+        
