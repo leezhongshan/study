@@ -1,22 +1,22 @@
 **************************** 2015-9-17***************************
-1.ctex ÏÂÔØ
+1.ctex ä¸‹è½½
 
  http://www.ctex.org/CTeXDownload 
   
   $installpath\CTEX\MiKTeX\miktex\bin
  
-2. ÖĞÎÄÖ§³Ö
+2. ä¸­æ–‡æ”¯æŒ
 
   mo.exe   
   
-  Packages\MiKTex Packages\Language Support\Chinese ÏÂÈ«Ñ¡
+  Packages\MiKTex Packages\Language Support\Chinese ä¸‹å…¨é€‰
   
-3. texÎÄ¼şÉú³Épdf
+3. texæ–‡ä»¶ç”Ÿæˆpdf
 
  pdflatex  foo.tex 
  
  
-4.  hello world ³ÌĞò
+4.  hello world ç¨‹åº
 
 \documentclass{article}
 \begin{document}
