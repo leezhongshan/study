@@ -1,0 +1,5 @@
+**************************** 2015-9-19***************************
+1. 导出数据
+select * from mytbl into outfile '/tmp/mytbl.txt';
+
+http://www.cnblogs.com/stublue/archive/2012/07/02/2573860.html
