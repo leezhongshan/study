@@ -1,6 +1,31 @@
+**************************** 2015-10-10***************************
+1.git  文件忽略
+https://github.com/leezhongshan/gitignore
+
+
+2.
+https ssl 验证及提示密码解决方法
+
+git config --global http.sslVerify false 
+git config --global credential.helper store
+
+ 
+
 **************************** 2015-10-8***************************
 1. git 学习文档
 http://git.oschina.net/progit/
+
+
+2. 
+http://www.yiibai.com/git/git_rename_operation.html
+
+1）git 重命名
+    src.c改为dest.c
+	
+	git mv src.c dest.c
+    
+	提交：git commit -a -m 'rename src.c to dest.c '
+
 
 
 **************************** 2015-9-2***************************
