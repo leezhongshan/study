@@ -1,3 +1,63 @@
+**************************** 2015-10-19****************************
+1.fastntf
+
+参考
+http://www.tuicool.com/articles/yiEVra
+http://www.linux178.com/storage/fastdfs-nginx-cache.html
+
+
+tracker:
+启动
+/usr/local/bin/fdfs_trackerd  /etc/fdfs/tracker.conf 
+重启
+/usr/local/bin/restart.sh  /usr/local/bin/fdfs_trackerd /etc/fdfs/tracker.conf
+
+
+vi /etc/rc.d/rc.local 
+
+  a. 打开文件 vi /etc/rc.d/rc.local
+
+   b. 将如下命令添加到该文件中 /usr/bin/fdfs_trackerd  /etc/fdfs/tracker.conf  restart
+
+
+
+   
+
+
+2.查看端口进程 
+lsof -i :22  
+
+3.上传输出 
+/usr/local/bin/fdfs_upload_file /etc/fdfs/client.conf b.txt
+
+
+
+group_name=group1, ip_addr=192.168.56.129, port=23000
+storage_upload_by_filename
+group_name=group1, remote_filename=M00/00/00/wKg4gVYc9hiAO8WAAAz7VFv2KkQ.tar.gz
+source ip address: 192.168.56.129
+file timestamp=2015-10-13 20:16:24
+file size=850772
+file crc32=1542859332
+file url: http://192.168.56.129:8080/group1/M00/00/00/wKg4gVYc9hiAO8WAAAz7VFv2KkQ.tar.gz
+storage_upload_slave_by_filename
+group_name=group1, remote_filename=M00/00/00/wKg4gVYc9hiAO8WAAAz7VFv2KkQ_big.tar.gz
+source ip address: 192.168.56.129
+file timestamp=2015-10-13 20:16:24
+file size=850772
+file crc32=1542859332
+file url: http://192.168.56.129:8080/group1/M00/00/00/wKg4gVYc9hiAO8WAAAz7VFv2KkQ_big.tar.gz
+
+
+3. fdfs 启动
+
+/usr/bin/fdfs_trackerd /etc/fdfs/tracker.conf restart
+/usr/bin/fdfs_storaged /etc/fdfs/storage.conf restart
+
+
+4.  
+killall - kill processes by name
+
 
 **************************** 2015-9-28****************************
 1. 查看当前centos版本
