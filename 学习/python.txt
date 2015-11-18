@@ -1,3 +1,22 @@
+**************************** 2013-11-8**************************** 
+1. Django 搭建
+
+ 
+https://bootstrap.pypa.io/get-pip.py
+
+
+wget https://bootstrap.pypa.io/get-pip.py
+python get-pip.py
+pip install Django==1.7.6
+
+验证：
+import django
+django.VERSION
+
+
+
+
+
 **************************** 2013-8-23 **************************** 
 1. python copy 文件
  

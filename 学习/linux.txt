@@ -1,3 +1,10 @@
+
+**************************** 2015-10-20****************************
+1. rsync
+
+
+
+
 **************************** 2015-10-19****************************
 1.fastntf
 
@@ -15,14 +22,8 @@ tracker:
 
 vi /etc/rc.d/rc.local 
 
-  a. 打开文件 vi /etc/rc.d/rc.local
-
-   b. 将如下命令添加到该文件中 /usr/bin/fdfs_trackerd  /etc/fdfs/tracker.conf  restart
-
-
-
-   
-
+a. 打开文件 vi /etc/rc.d/rc.local
+b. 将如下命令添加到该文件中 /usr/bin/fdfs_trackerd  /etc/fdfs/tracker.conf  restart
 
 2.查看端口进程 
 lsof -i :22  
