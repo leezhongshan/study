@@ -1,7 +1,6 @@
 **************************** 2013-11-8**************************** 
 1. Django 搭建
 
- 
 https://bootstrap.pypa.io/get-pip.py
 
 
@@ -14,13 +13,8 @@ import django
 django.VERSION
 
 
-2. 
- 
-
-
-3. 
-
-
+2.  python  设计模式
+http://my.oschina.net/u/1785471/blog/301205
 
 **************************** 2013-8-23 **************************** 
 1. python copy 文件
