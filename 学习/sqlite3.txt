@@ -1,0 +1,25 @@
+**************************** 2015-11-19***************************
+1. 
+sqlite查看所有表名、判断表是否存在，字段名及字段信息
+
+sqlite查看所有表名及字段名
+查询table，type 段是'table'，name段是table的名字,
+select name from sqlite_master where type='table' order by name;
+
+如果type段是'index', 则name 是index的名字，tbl_name是index所拥有的table的名字。
+
+如果type段是'table'，则name是表名
+由此可以进一步引深：判断指定的表是否存在，则可以用如下语句：
+
+select count(*)  from sqlite_master where type='table' and name = 'yourtablename';
+其中yourtablename表示你要判断的表名，如果结果大于0，表示改表存在数据库中，否则不存在。
+
+
+通过以下语句可查询出某个表的所有字段信息
+PRAGMA table_info([tablename])
+
+比如：我想看看出表tbl_sfg_device表的所有列信息，可以用下述代码：
+
+PRAGMA table_info(tbl_sfg_device)
+
+注意： PRAGMA必须大写

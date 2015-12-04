@@ -1,3 +1,66 @@
+**************************** 2015-11-30 ****************************
+1.cmake使用示例与整理总结 
+  
+  
+  http://blog.csdn.net/wzzfeitian/article/details/40963457/
+  http://www.ibm.com/developerworks/cn/linux/l-cn-cmake/ 
+  http://blog.sina.com.cn/s/blog_5413483701016bss.html
+  
+
+  
+ 一、变量的引用方式是使用“${}”，在IF中，不需要使用这种方式，直接使用变量名即可
+二、自定义变量使用SET(OBJ_NAME xxxx)，使用时${OBJ_NAME}
+三、cmake的常用变量：
+CMAKE_BINARY_DIR,PROJECT_BINARY_DIR,_BINARY_DIR：
+这三个变量内容一致，如果是内部编译，就指的是工程的顶级目录，如果是外部编译，指的就是工程编译发生的目录。
+CMAKE_SOURCE_DIR,PROJECT_SOURCE_DIR,_SOURCE_DIR：
+这三个变量内容一致，都指的是工程的顶级目录。
+
+
+CMAKE_CURRENT_BINARY_DIR：外部编译时，指的是target目录，内部编译时，指的是顶级目录
+CMAKE_CURRENT_SOURCE_DIR：CMakeList.txt所在的目录
+CMAKE_CURRENT_LIST_DIR：CMakeList.txt的完整路径
+CMAKE_CURRENT_LIST_LINE：当前所在的行
+CMAKE_MODULE_PATH：如果工程复杂，可能需要编写一些cmake模块，这里通过SET指定这个变量
+LIBRARY_OUTPUT_DIR,BINARY_OUTPUT_DIR：库和可执行的最终存放目录
+PROJECT_NAME：你猜~~
+
+四、cmake中调用环境变量
+1.Using $ENV{NAME} : invoke system environment varible.
+We can use "SET(ENV{NAME} value)" as well. note that the "ENV" without "$".
+2.CMAKE_INCLUDE_CURRENT_DIR equal to INCLUDE_DIRECTORY(${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
+
+五、其他的内置变量
+1.BUILD_SHARED_LIBS:set the default value when using ADD_LIBRARY()
+2.CMAKE_C_FLAGS: set compiler for c language
+2.CMAKE_CXX_FLAGS: set compiler for c++ language
+
+六、区分debug和release
+在工程目录下，cmake -DCMAKE__BUILD_TYPE=DEBUG(RELEASE)，再执行make
+
+七、指定编译32bit或64bit程序
+SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -m32")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -m32")
+
+
+
+set命令
+
+经常配合set命令使用的CMake变量，使用set(variable value)进行设置。
+
+    CMAKE_VERBOSE_MAKEFILE on 输出详细的编译和链接信息
+    CMAKE_CXX_COMPILER "g++" c++编译器
+    CMAKE_CXX_FLAGS "-Wall" c++编译器参数
+        CMAKE_CXX_FLAGS_DEBUG 除CMAKE_CXX_FLAGS外，debug版本的额外编译器参数
+        CMAKE_CXX_FLAGS_RELEASE 除CMAKE_CXX_FLAGS外，release版本的额外编译器参数
+    EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin 可执行文件的输出目录
+    LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib 链接库的输出目录
+
+    
+    
+    
+
+
 **************************** 2015-5-6 ****************************
  1) 编写CMakeLists.txt,main.c  文件
      
