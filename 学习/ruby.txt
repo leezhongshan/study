@@ -16,3 +16,6 @@ $ sudo make install
  sudo yum install ruby
  
  
+ 2. ruby 数据类型
+ 
+  

@@ -1,0 +1,35 @@
+**************************** 2015-9-17***************************
+1.ctex 下载
+
+ http://www.ctex.org/CTeXDownload 
+  
+  $installpath\CTEX\MiKTeX\miktex\bin
+ 
+2. 中文支持
+
+  mo.exe   
+  
+  Packages\MiKTex Packages\Language Support\Chinese 下全选
+  
+3. tex文件生成pdf
+
+ pdflatex  foo.tex 
+ 
+ 
+4.  hello world 程序
+
+\documentclass{article}
+\begin{document}
+hello, world
+\end{document}
+
+5. 数学符号
+
+http://www.ctex.org/documents/shredder/tex_frame.html 
+
+
+
+
+
+
+
