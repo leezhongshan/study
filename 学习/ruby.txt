@@ -1,0 +1,21 @@
+**************************** 2015-9-29***************************
+1. Ruby 安装 
+ 
+ 下载
+ www.ruby-lang.org/en/downloads/
+
+ 
+$ tar -xvzf ruby-2.2.3.tgz    
+$ cd ruby-2.2.3 
+ 
+$ ./configure
+$ make
+$ sudo make install
+ 
+ 自动安装 Ruby
+ sudo yum install ruby
+ 
+ 
+ 2. ruby 数据类型
+ 
+  

@@ -1,3 +1,24 @@
+**************************** 2015-12-5****************************
+1. 把语言环境变量改为英文
+
+ /etc/default/locale
+ LANG=en_US.UTF-8
+LANGUAGE=en_US:en
+LC_CTYPE="en_US.UTF-8"
+LC_NUMERIC="en_US.UTF-8"
+LC_TIME="en_US.UTF-8"
+LC_COLLATE="en_US.UTF-8"
+LC_MONETARY="en_US.UTF-8"
+LC_MESSAGES="en_US.UTF-8"
+LC_PAPER="en_US.UTF-8"
+LC_NAME="en_US.UTF-8"
+LC_ADDRESS="en_US.UTF-8"
+LC_TELEPHONE="en_US.UTF-8"
+LC_MEASUREMENT="en_US.UTF-8"
+LC_IDENTIFICATION="en_US.UTF-8"
+LC_ALL=
+
+%locale
 
 **************************** 2015-10-20****************************
 1. rsync
@@ -57,14 +78,23 @@ file url: http://192.168.56.129:8080/group1/M00/00/00/wKg4gVYc9hiAO8WAAAz7VFv2Kk
 
 
 4.  
-killall - kill processes by name
+killall - kill processes by names
 
+ 
+**************************** 2015-9-30****************************
+1.sudoer用户不需要输入密码
 
+$sudo vi /etc/sudoers
+  
+username ALL=(ALL)  NOPASSWD: ALL
+
+wq!
 **************************** 2015-9-28****************************
 1. 查看当前centos版本
  
  cat /etc/redhat-release
  
+
 **************************** 2015-9-7****************************
 1. 
 
