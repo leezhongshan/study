@@ -1,5 +1,13 @@
-**************************** 2015-12-7**************************
+**************************** 2015-12-28**************************
 1. 
+
+©Б
+opencv_world300d.lib;opencv_ts300d.lib
+
+м╥нд╪Ч
+#include "opencv/cv.h"
+#include "opencv2/imgproc/imgproc.hpp"
+#include "opencv2/highgui/highgui.hpp"
 
 
 
