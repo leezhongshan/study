@@ -1,0 +1,21 @@
+**************************** 2015-3-17***************************
+1.
+
+ 源文件路经执行以下命令，生成.h文件
+ javah -jni  com.example.hellojni.HelloJni
+  
+
+
+**************************** 2015-3-16***************************
+1.  hello jni 
+ 
+   ref: http://developer.android.com/ndk/samples/sample_hellojni.html#ci
+   
+   
+   
+   
+   
+
+ 
+ 
+    

@@ -1,0 +1,85 @@
+****************************************2016-3-17****************************************
+1. lua 类型
+ 
+nil 	用于区分具有一些数据或没有(nil)数据的值。
+boolean 	包括true和false值。一般用于条件检查。
+number 	表示真实(双精度浮点数)的数字。
+string 	表示字符数组。
+function 	表示是用C或Lua语言的方法。
+userdata 	表示任意C数据。
+thread 	独立的执行线程，它是用来实现协程。
+table 	代表普通数组，符号表，集合，记录，图，树等，并实现关联数组。它可以容纳任何值(除了nil)。
+
+2.逻辑运算符
+
+ and or  not 
+
+3. 分支语句
+
+
+1） if 语句
+
+if a>b
+then 
+  ...
+else
+  ...
+end   
+
+
+if a > b 
+then 
+  ... 
+end
+
+2）while 循环 
+  
+while(true) 
+do  
+  ... 
+
+end 
+
+
+3) for   
+
+
+for init,max/min value, increment
+do
+   statement(s)
+end
+
+
+for i=10,1,-1 
+do 
+   print(i) 
+end
+
+4） repeat...until
+
+
+  repeat 
+   
+     ....
+	 
+	 
+   until(true)
+
+4.  
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
