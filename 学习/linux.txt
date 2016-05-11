@@ -1,3 +1,31 @@
+**************************** 2016-5-11****************************
+1.samba 共享文件夹
+
+
+1） 修改smb.conf
+vi  /etc/samba/smb.conf
+
+[pi]
+comment = usb storage
+path = /home/pi/share
+browseable = Yes
+writable = yes
+valid users = pi
+create mask = 0777
+directory mask = 0777
+
+
+2. 添加账户pi,并设置密码
+sudo smbpasswd -a pi  
+输入密码
+
+3.修改目录权限
+ /home/pi/share
+  
+ sudo chmod 777 /home/pi/share
+4. 重启smb
+ sudo /etc/init.d/samba restart
+
 **************************** 2015-12-5****************************
 1. 把语言环境变量改为英文
 
