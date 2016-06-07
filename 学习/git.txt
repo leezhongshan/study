@@ -3,7 +3,7 @@
 默认push 
 git config --global push.default  xxx
 
-
+git config --global credential.helper
 
 **************************** 2015-10-10***************************
 1.git  文件忽略
