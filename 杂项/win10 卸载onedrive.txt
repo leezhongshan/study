@@ -1,0 +1,17 @@
+
+由于DNS污染，国内是上不去网页版OneDrive的（除非你改hosts或fq），不但很多人用不着还开机自启动，很是麻烦。于是自己整了会儿，写了个批处理，现在就来分享下。
+打开管理员cmd，输入以下命令：
+
+taskkill /f /im OneDrive.exe    //结束OneDrive进程
+taskkill /f /im explorer    //结束explorer进程，倒数第4、5、6行这3个文件夹是删不掉的
+if exist %SYSTEMROOT%\SysWOW64\OneDriveSetup.exe (    //查看系统构架是否为64位
+%SYSTEMROOT%\SysWOW64\OneDriveSetup.exe /uninstall    //如果是，则开始卸载
+) else (    //如果不是
+%SYSTEMROOT%\System32\OneDriveSetup.exe /uninstall    //开始卸载32位OneDrive
+)
+rd  /s /q "%USERPROFILE%\OneDrive"    //删除本地文件
+rd  /s /q "%LOCALAPPDATA%\Microsoft\OneDrive"    //删除本地文件
+rd  /s /q "%PROGRAMDATA%\Microsoft OneDrive"    //同上
+reg delete "HKEY_CLASSES_ROOT\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" /f    //删除注册表项，作用是从侧边栏移除OneDrive图标
+reg delete "HKEY_CLASSES_ROOT\Wow6432Node\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" /f    //同上
+start explorer    //重启explorer
