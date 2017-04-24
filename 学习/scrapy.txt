@@ -1,3 +1,24 @@
+ 
+ ****************************************2016-4-21**************************************** 
+ 
+1.  Linux 下安装pip
+
+
+ 在Linux系统中，pip通常可以在系统的软件管理器中安装，不过通过此方法安装的 一般不会是最新版本的pip.
+
+Debian 和 Ubuntu:
+
+$ sudo apt-get install python-pip
+
+Fedora，CentOS:
+
+$ sudo yum install python-pip
+
+
+ $ sudo apt-get install -y python-lxml
+ 
+ ******************************************************************************** 
+ 
  学习Scrapy   
  
    1） 新建工程
@@ -31,3 +52,4 @@
      scrapy shell http://www.dmoz.org/Computers/Programming/Languages/Python/Books/ 
 		
    6) 
+   
