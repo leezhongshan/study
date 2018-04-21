@@ -1,3 +1,15 @@
+
+
+**************************** 2018-4-21***************************
+
+
+TortoiseGit disconnected no supported authentication 
+
+修改方法：
+TortoiseGit -> Settings –> Network->将SSH client设置成C:\Program Files\Git\usr\bin\ssh.exe
+
+
+
 **************************** 2015-10-14***************************
 1. git config  
 默认push 
