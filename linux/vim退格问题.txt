@@ -1,0 +1,4 @@
+1.vi 打开文件 
+/etc/vim/vimrc.tiny
+
+2. 将set compatible 设置成set nocompatible

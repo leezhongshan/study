@@ -1,0 +1,6 @@
+1.服务自启动 
+
+chkconfig sshd on 
+
+2.
+sudo raspi-config
