@@ -1,0 +1,54 @@
+1.安装编译相关工具
+sudo yum -y groupinstall "Development tools"
+sudo yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel
+sudo yum install libffi-devel -y
+
+
+2.下载安装包 
+wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz
+
+tar -xzvf Python-3.7.0.tgz
+
+cd Python-3.7.0
+
+
+3.安装openssl
+wget http://www.openssl.org/source/openssl-1.0.2r.tar.gz
+tar zxvf openssl-1.0.2r.tar.gz
+./config --prefix=/opt/openssl1.0.2r --openssldir=/opt/openssl1.0.2r/openssl no-zlib
+make && make install
+echo "/opt/openssl1.0.2r/lib" >> /etc/ld.so.conf
+ldconfig -v
+
+
+4. 编译 
+  1） ./configure --prefix=/usr/local/python3
+
+  2） make
+    # 发现一直check 原因是系统时间不对， date -s "2020-11-25 21:47:00" 使用date设置
+	
+	make时提示 Fatal Python error: Py_Initialize: Unable to get the locale encoding
+
+解决办法:
+
+ 
+
+export LC_ALL=zh_CN.UTF-8
+
+
+  3)  make install
+     发现错误
+
+	import pip
+	zipimport.ZipImportError: can’t decompress data; zlib not available
+	make: * [install] Error 1
+
+     解决： 安装 sudo yum -y install zlib-devel
+
+4. 创建软连接
+ ln -s /usr/local/python3/bin/python3.7 /usr/bin/python3
+ 
+ python3 -V
+ 
+ 
+ 

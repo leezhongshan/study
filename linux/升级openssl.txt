@@ -1,0 +1,39 @@
+升级openssl
+
+1.下载最新版openssl
+
+https://www.openssl.org/source/openssl-1.1.1-pre8.tar.gz
+
+2.编译安装
+
+cd openssl-1.1.1-pre8
+./config --prefix=/usr/local/openssl no-zlib #不需要zlib
+make
+make install
+
+
+3.备份原配置
+
+ mv /usr/bin/openssl /usr/bin/openssl.bak
+ mv /usr/include/openssl/ /usr/include/openssl.bak
+ 
+
+ ln -s /usr/local/openssl/include/openssl   /usr/include/openssl
+ ln -s /usr/local/openssl/lib/libssl.so.1.1  /usr/local/lib64/libssl.so
+ 
+ 
+ 
+ 重新安装python
+注意：需要指定openssl的安装路径，--with-openssl
+
+./configure --prefix=/usr/local/python3  --with-openssl=/usr/local/openssl
+make
+make install
+
+
+[root@localhost ~]# vim Modules/Setup
+SSL=/opt/openssl1.0.2r
+_ssl _ssl.c \
+    -DUSE_SSL -I$(SSL)/include -I$(SSL)/include/openssl \
+    -L$(SSL)/lib -lssl -lcrypto
+	
